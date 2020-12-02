@@ -1,0 +1,10 @@
+{
+  "name": "init-es6",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src/ -d dist/",
+    "start": "babel --watch src/ -d dist/"
+  }
+}

@@ -85,7 +85,13 @@ yarn add @babel/core \
 
 echo;
 
-printf "👉 Flpw\n";
+printf "👉 Terser...\n"
+
+yarn add terser --dev;
+
+echo;
+
+printf "👉 Flow\n";
 
 if [[ $skipquestions == "no" ]]; then
   read -n 1 -p "Use Flow types? [y]/n: " useflow && echo;

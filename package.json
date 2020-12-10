@@ -6,6 +6,6 @@
   "scripts": {
     "minify": "terser dist/init-es6.js --compress --mangle --source-map --output dist/init-es6.min.js",
     "build": "babel src/ -o dist/init-es6.js",
-    "start": "babel src/ -o dist/init-es6.js --watch"
+    "start": "babel src/ -o dist/init-es6.js --watch & pho -S localhost:8888"
   }
 }

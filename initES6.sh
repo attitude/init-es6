@@ -9,6 +9,7 @@ read -p "👉 Project name for package.json [${cwd}]: " name;
 name=${name:-${cwd}}
 
 sed -i '' "s/init-es6/${name}/" package.json;
+sed -i '' "s/\.js\.js/.js/" package.json;
 printf "✨ Project name is ${name}\n";
 
 skipquestions="no"

@@ -7,6 +7,7 @@ echo;
 read -p "👉 Project name for package.json [${cwd}]: " name;
 
 name=${name:-${cwd}}
+noJsBaseName=${name/%\.js/}
 
 sed -i '' "s/init-es6/${name}/" package.json;
 sed -i '' "s/\.js\.js/.js/" package.json;
@@ -101,7 +102,7 @@ fi;
 useflow=${useflow:-y}
 
 if [[ $useflow != "y" ]]; then
-  touch src/index.js;
+  touch src/${noJsBaseName}.js;
   printf "👎 No Flow\n\n";
 else
   if [ -e attitude/.flowconfig ]; then
@@ -110,8 +111,8 @@ else
     yarn add flow-bin @babel/preset-flow --dev;
   fi;
 
-  if [ ! -e "src/index.js" ];
-    then printf "// @flow\n" > src/index.js;
+  if [ ! -e "src/${noJsBaseName}.js" ];
+    then printf "// @flow\n" > src/${noJsBaseName}.js;
   fi;
 
   printf "✅ Flow is now set up\n\n";
